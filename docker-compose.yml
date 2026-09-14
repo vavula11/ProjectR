@@ -1,0 +1,30 @@
+services:
+
+  airflow:
+    build: .
+    container_name: radancy_airflow
+
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+
+      DB_HOST: "host.docker.internal"
+      DB_USER: "root"
+      DB_PASSWORD: "Vaz12511251"
+      DB_NAME: "radancy_ads"
+
+      SOURCE_FILE: "/opt/airflow/data/BING_MultiDays.csv"
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/src
+      - ./sql:/opt/airflow/sql
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+
+    command: standalone
