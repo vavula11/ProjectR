@@ -50,7 +50,7 @@ def get_connection():
     return mysql.connector.connect(
         host=os.getenv("DB_HOST", "localhost"),
         user=os.getenv("DB_USER", "root"),
-        password=os.getenv("DB_PASSWORD", "Vaz12511251"),
+        password=os.getenv("DB_PASSWORD", "YOUR_PASSWORD"),
         database=os.getenv("DB_NAME", "radancy_ads"),
     )
 
