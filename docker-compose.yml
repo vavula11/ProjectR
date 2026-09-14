@@ -14,7 +14,7 @@ services:
 
       DB_HOST: "host.docker.internal"
       DB_USER: "root"
-      DB_PASSWORD: "Vaz12511251"
+      DB_PASSWORD: "your_mysql_password"
       DB_NAME: "radancy_ads"
 
       SOURCE_FILE: "/opt/airflow/data/BING_MultiDays.csv"
